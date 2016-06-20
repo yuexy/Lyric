@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee">
+
+    <!-- 最底层的视图 -->
+    <FrameLayout
+        android:id="@+id/headerBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/colorPrimary"
+        tools:layout_height="250dp">
+
+        <!-- 这里填充一个imageView作为背景图片 -->
+        <FrameLayout
+            android:id="@+id/headerBackgroundContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/statusBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <!-- 中层的视图，负责显示各种东西 -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- 最顶层试图，负责显示各种可以被操作的东西 -->
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/top_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <!-- 这里填充一个pagerTitleStripContainer -->
+        <FrameLayout
+            android:fitsSystemWindows="true"
+            android:id="@+id/pagerTitleStripContainer"
+            android:layout_marginTop="160dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:background="#3FFF"
+            />
+
+        <!-- 这里可以不填充，可以填充一个Layout -->
+        <!-- 这里添加一个ImageView,可以切换logo -->
+        <FrameLayout
+            android:id="@+id/logoContainer"
+            android:fitsSystemWindows="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MaterialViewPager">
+        <attr name="viewpager_header" format="reference"/>
+        <attr name="viewpager_logo" format="reference"/>
+        <attr name="viewpager_pagerTitleStrip" format="reference"/>
+        <attr name="viewpager_logoMarginTop" format="dimension"/>
+        <attr name="viewpager_color" format="color"/>
+        <attr name="viewpager_headerHeight" format="dimension"/>
+        <attr name="viewpager_headerAlpha" format="float"/>
+        <attr name="viewpager_hideTitle" format="boolean"/>
+        <attr name="viewpager_hideLogoWithFade" format="boolean"/>
+        <attr name="viewpager_enableElevation" format="boolean"/>
+        <attr name="viewpager_pagerStripMiddle" format="boolean"/>
+    </declare-styleable>
+    
+    <declare-styleable name="MaterialWidget">
+        <attr name="widget_iconFloat" format="integer"/>
+        <attr name="widget_isanim" format="boolean"/>
+        <attr name="widget_iconSize" format="dimension"/>
+        <attr name="check" format="boolean"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zq.mdlib.mdviewpager.MaterialViewPagerImageLogo
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/materialviewpager_imageLogo"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:fitsSystemWindows="true"
+    android:adjustViewBounds="true"
+    android:layout_gravity="center" />

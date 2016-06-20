@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View android:layout_width="match_parent" android:layout_height="35dp"
+          android:layout_alignParentBottom="true" android:background="@color/white"/>
+
+    <zq.mdlib.mdwidget.ButtonFlat
+        android:id="@+id/user_manage_signup_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Cancel"
+        android:textColor="#009688"/>
+
+    <zq.mdlib.mdwidget.ButtonFlat
+        android:id="@+id/user_manage_signup_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/user_manage_signup_cancel"
+        android:text="Sign up"
+        android:textColor="#009688"/>
+
+    <zq.mdlib.mdwidget.ButtonFlat
+        android:id="@+id/user_manage_signup_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Sign in"
+        android:textColor="#009688"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/user_manage_login_cancel"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_manage_signup_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Sign up"
+                android:textColor="@color/List_Title_color"
+                android:textSize="23sp"/>
+
+            <TextView
+                android:id="@+id/user_manage_signup_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="7dp"
+                android:text="input your id and password"
+                android:textColor="@color/List_Time_color"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/user_manage_signup_userid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="28dp"
+                android:text="User Id"
+                android:textColor="@color/List_Title_color"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/user_manage_signup_userid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/alpha"
+                android:drawableBottom="@drawable/edittext_underline"
+                android:inputType="number"
+                android:maxLength="13"
+                android:textColor="@color/edit_text_color"
+                android:textColorHint="@color/edit_hint_color"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/user_manage_signup_pwd_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Password"
+                android:textColor="@color/List_Title_color"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/user_manage_signup_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/alpha"
+                android:drawableBottom="@drawable/edittext_underline"
+                android:inputType="textPassword"
+                android:textColor="@color/edit_text_color"
+                android:textColorHint="@color/edit_hint_color"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

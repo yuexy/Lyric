@@ -69,6 +69,8 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dependency-cache" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jacoco" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaResources" />
@@ -82,9 +84,21 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="okio-1.7.0" level="project" />
+    <orderEntry type="library" exported="" name="BmobSDK_V3.4.7_0527" level="project" />
+    <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
+    <orderEntry type="library" exported="" name="butterknife-6.1.0" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.2.0" level="project" />
+    <orderEntry type="library" exported="" name="kenburnsview-1.0.6" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Bmob_Push_V0.9beta_20160520" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-22.1.1" level="project" />
     <orderEntry type="module" module-name="library" exported="" />
+    <orderEntry type="module" module-name="materiallib" exported="" />
   </component>
 </module>

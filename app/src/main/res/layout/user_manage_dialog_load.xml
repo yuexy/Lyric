@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正在加载~ \n \n请稍后 =w= "
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp">
+
+        <zq.whu.zswd.view.imageview.ScrollingImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            scrolling_image_view:speed="1dp"
+            scrolling_image_view:src="@mipmap/scrolling_background"/>
+
+        <zq.whu.zswd.view.imageview.ScrollingImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            scrolling_image_view:speed="1.9dp"
+            scrolling_image_view:src="@mipmap/scrolling_foreground"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:src="@mipmap/van"/>
+    </FrameLayout>
+
+</RelativeLayout>

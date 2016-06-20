@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.1.2"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.example.weimeng.lyric"
@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.jniLibs.srcDirs = ['libs']
+    }
 }
 
 dependencies {
@@ -24,4 +27,5 @@ dependencies {
     compile project(':library')
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'com.jakewharton:butterknife:6.1.0'
+    compile project(':materiallib')
 }
