@@ -31,7 +31,7 @@ public class DateTools
 
 	public int getMonth()
 	{
-		return calendar.get(Calendar.MONTH);
+		return calendar.get(Calendar.MONTH) + 1;
 	}
 
 	public int getDay()

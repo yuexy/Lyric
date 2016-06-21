@@ -322,13 +322,6 @@ public class UserManageDialog extends Dialog
 		super.onStop();
 	}
 
-	/**
-	 * 取消按键事件
-	 *
-	 * @param keyCode
-	 * @param event
-	 * @return
-	 */
 	public boolean onKeyDown(int keyCode, KeyEvent event)
 	{
 		return false;

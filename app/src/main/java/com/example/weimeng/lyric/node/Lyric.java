@@ -24,7 +24,7 @@ public class Lyric extends BmobObject
 
 	public String getLyric()
 	{
-		return lyric;
+		return lyric.replace("\\n", "\n");
 	}
 
 	public void setImage(String i)
@@ -104,6 +104,6 @@ public class Lyric extends BmobObject
 
 	public String getComments()
 	{
-		return comments;
+		return comments.replace("\\n", "\n");
 	}
 }

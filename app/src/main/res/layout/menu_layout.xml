@@ -29,7 +29,7 @@
             android:id="@+id/header"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:src="@mipmap/icon_cat"
+            android:src="@mipmap/header_icon"
             android:layout_centerHorizontal="true"
             app:border_width="3dp"
             app:border_color="@color/List_Title_color"/>
@@ -48,8 +48,27 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/sign_out"
+        android:id="@+id/about"
         android:layout_below="@id/menu_header"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <com.example.weimeng.lyric.view.CanaroTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="About"
+            android:textColor="@color/List_Time_color"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sign_out"
+        android:layout_below="@id/about"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

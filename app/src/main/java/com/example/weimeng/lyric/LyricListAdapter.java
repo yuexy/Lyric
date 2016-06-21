@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.weimeng.lyric.node.Lyric;
 import com.example.weimeng.lyric.tools.ImageTools;
+import com.example.weimeng.lyric.ui.content.ContentDialog;
 import com.example.weimeng.lyric.view.LyricImageView;
 
 import java.util.List;
@@ -44,10 +45,19 @@ public class LyricListAdapter extends RecyclerView.Adapter<LyricListAdapter.Lyri
 	}
 
 	@Override
-	public void onBindViewHolder(LyricListHolder holder, int position)
+	public void onBindViewHolder(LyricListHolder holder, final int position)
 	{
 		holder.lyricImageView.setImageDrawable(new BitmapDrawable(ImageTools.string2Img(lyricList.get(position).getImage())), 400);
 		holder.lyricImageView.setText(lyricList.get(position).getLyric());
+
+		holder.lyricImageView.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				new ContentDialog(mContext, lyricList.get(position)).show();
+			}
+		});
 	}
 
 	@Override

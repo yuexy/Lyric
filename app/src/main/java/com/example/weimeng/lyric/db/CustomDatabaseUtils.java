@@ -42,13 +42,13 @@ public class CustomDatabaseUtils extends SQLiteOpenHelper
 		String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_LYRIC_NAME
 				+ "(lyric TEXT,"
 				+ "image TEXT,"
-				+ "author TEXT)" //author TEXT)
+				+ "author TEXT,"
 				+ "year INT,"
 				+ "month INT,"
 				+ "day INT,"
 				+ "hour INT,"
 				+ "minute INT,"
-				+ "comments TEXT";
+				+ "comments TEXT)";
 
 		db.execSQL(sql);
 	}
