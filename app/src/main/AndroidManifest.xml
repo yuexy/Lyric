@@ -3,6 +3,7 @@
     package="com.example.weimeng.lyric" >
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,6 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.add.AddActivity"
+            android:label="@string/app_name" />
     </application>
 
     <!--允许联网 -->

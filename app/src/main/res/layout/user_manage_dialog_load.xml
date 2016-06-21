@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="正在加载~ \n \n请稍后 =w= "
         android:gravity="center_horizontal"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/List_Time_color"
         android:textSize="20sp"
         android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"/>
@@ -21,14 +21,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp">
 
-        <zq.whu.zswd.view.imageview.ScrollingImageView
+        <com.example.weimeng.lyric.view.ScrollingImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             scrolling_image_view:speed="1dp"
             scrolling_image_view:src="@mipmap/scrolling_background"/>
 
-        <zq.whu.zswd.view.imageview.ScrollingImageView
+        <com.example.weimeng.lyric.view.ScrollingImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

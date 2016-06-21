@@ -14,13 +14,13 @@
         android:background="@color/guillotine_background"
         />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
+            android:layout_alignParentTop="true"
             style="@style/Toolbar"
             app:contentInsetStart="0dp">
 
@@ -29,24 +29,54 @@
                 style="@style/ImageView.Hamburger"
                 android:src="@drawable/ic_menu_90"/>
 
-            <TextView
+            <com.example.weimeng.lyric.view.CanaroTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Activity"
+                android:text="Lyric"
                 android:textColor="@color/title_text_color"
                 android:textSize="@dimen/guillotine_item_text_size"/>
         </android.support.v7.widget.Toolbar>
 
-        <!--<ImageView-->
-        <!--style="@style/ImageView.ContentItem"-->
-        <!--android:layout_marginTop="@dimen/guillotine_medium_margin"-->
-        <!--android:src="@drawable/content_1" />-->
+        <zq.mdlib.mdwidget.ProgressBarCircular
+            android:id="@+id/lyric_progress_bar"
+            android:layout_below="@id/toolbar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"/>
 
-        <!--<ImageView-->
-        <!--style="@style/ImageView.ContentItem"-->
-        <!--android:src="@drawable/content_2" />-->
+        <LinearLayout
+            android:id="@+id/lyric_wrong_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/toolbar"
+            android:orientation="vertical"
+            android:visibility="gone">
 
+            <TextView
+                android:id="@+id/news_tab_wrong_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="check your network"/>
 
-    </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/lyric_swipelayout"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lyric_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
 </FrameLayout>

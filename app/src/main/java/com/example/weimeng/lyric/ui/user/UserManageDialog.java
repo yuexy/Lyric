@@ -2,6 +2,7 @@ package com.example.weimeng.lyric.ui.user;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.view.KeyEvent;
@@ -139,6 +140,12 @@ public class UserManageDialog extends Dialog
 		loginUserId = (EditText) loginView.findViewById(R.id.user_manage_login_userid);
 		loginUserPwd = (EditText) loginView.findViewById(R.id.user_manage_login_pwd);
 
+		if (!"".equals(SharedPreferencesTools.getInstance().getUserId()))
+		{
+			loginUserId.setText(SharedPreferencesTools.getInstance().getUserId());
+			loginUserPwd.setText(SharedPreferencesTools.getInstance().getUserPwd());
+		}
+
 		initLoginViewButton();
 	}
 
@@ -198,7 +205,8 @@ public class UserManageDialog extends Dialog
 						SharedPreferencesTools.getInstance().setUserPwd(userPwd);
 
 						// send message
-
+						Intent intent = new Intent("com.example.weimeng.lyric.login");
+						mContext.sendBroadcast(intent);
 						//
 
 						dismiss();
@@ -281,7 +289,8 @@ public class UserManageDialog extends Dialog
 						SharedPreferencesTools.getInstance().setUserPwd(userPwd);
 
 						// send message
-
+						Intent intent = new Intent("com.example.weimeng.lyric.login");
+						mContext.sendBroadcast(intent);
 						//
 
 						dismiss();

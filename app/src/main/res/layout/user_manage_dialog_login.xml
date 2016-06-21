@@ -83,7 +83,7 @@
                 android:layout_marginTop="11dp"
                 android:background="@color/alpha"
                 android:drawableBottom="@drawable/edittext_underline"
-                android:inputType="number"
+                android:inputType="text"
                 android:maxLength="13"
                 android:textColor="@color/edit_text_color"
                 android:textColorHint="@color/edit_hint_color"

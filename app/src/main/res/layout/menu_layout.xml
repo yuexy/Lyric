@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/guillotine_background"
-              android:orientation="vertical">
+              android:background="@color/guillotine_background">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/menu_toolbar"
         style="@style/Toolbar"
-        app:contentInsetStart="0dp">
+        app:contentInsetStart="0dp"
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:id="@+id/guillotine_hamburger"
@@ -16,4 +17,53 @@
             android:src="@drawable/ic_menu" />
     </android.support.v7.widget.Toolbar>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/menu_header"
+        android:layout_below="@id/menu_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <com.example.weimeng.lyric.view.CircleImageView
+            android:id="@+id/header"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@mipmap/icon_cat"
+            android:layout_centerHorizontal="true"
+            app:border_width="3dp"
+            app:border_color="@color/List_Title_color"/>
+
+        <com.example.weimeng.lyric.view.CanaroTextView
+            android:id="@+id/header_userid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/header"
+            android:text="Sign in"
+            android:textColor="@color/edit_text_color"
+            android:textSize="23sp"
+            android:layout_marginTop="15dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sign_out"
+        android:layout_below="@id/menu_header"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <com.example.weimeng.lyric.view.CanaroTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Sign out"
+            android:textColor="@color/List_Time_color"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
