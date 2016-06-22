@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		initBmob();//初始化服务器
+		// 初始化服务器
+		initBmob();
 
 		ButterKnife.inject(this);
 
@@ -109,9 +110,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 			getSupportActionBar().setTitle(null);
 		}
 
+		// 菜单视图
 		menuView = LayoutInflater.from(this).inflate(R.layout.menu_layout, null);
 		root.addView(menuView);
 
+		// 初始化菜单
 		guillotineAnimation = new GuillotineAnimation.GuillotineBuilder(menuView, menuView.findViewById(R.id.guillotine_hamburger), contentHamburger)
 				.setStartDelay(RIPPLE_DURATION)
 				.setActionBarViewForAnimation(toolbar)
@@ -122,9 +125,12 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
 	private void initBmob()
 	{
-		Bmob.initialize(this, "fa98129ef2165693c9bfb743ecc47b48");
+		Bmob.initialize(this, "fda59cf43cb42b830a694311bf8536f2");
 	}
 
+	/**
+	 * 初始化main_activity
+	 */
 	private void init()
 	{
 		findViews();
@@ -135,9 +141,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
 		regBroadcastRecv();
 
+		// 设置获取信息的选项
 		lyricBmobQuery = new BmobQuery<Lyric>();
 		lyricBmobQuery.setLimit(5);
 
+		// 获取到的列表
 		lyricList = new ArrayList<>();
 
 		lyricListAdapter = new LyricListAdapter(MainActivity.this, lyricList);
@@ -148,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 		mSwipeRefreshLayout.setRefreshing(true);
 		mSwipeRefreshLayout.setOnRefreshListener(this);
 
+		// 获取网络资源
 		lyricBmobQuery.findObjects(MainActivity.this, new FindListener<Lyric>()
 		{
 			@Override
@@ -273,6 +282,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 		});
 	}
 
+	/**
+	 * 初始化列表
+	 */
 	private void initRecyclerView()
 	{
 		linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);

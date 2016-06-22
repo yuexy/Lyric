@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 
 /**
  * Created by weimeng on 2016/6/21.
+ * 一个不能左右滑动的ViewPager
  */
 public class UnScrollableViewPager extends ViewPager
 {

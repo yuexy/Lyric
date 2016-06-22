@@ -23,6 +23,7 @@ import zq.mdlib.mdwidget.ButtonFlat;
 
 /**
  * Created by weimeng on 2016/6/21.
+ * 用户登录的dialog
  */
 public class UserManageDialog extends Dialog
 {
@@ -49,6 +50,7 @@ public class UserManageDialog extends Dialog
 	private ButtonFlat signUpLoginButton;
 	private EditText signUpUserId;
 	private EditText signUpUserPwd;
+	private EditText signUpUserEmail;
 
 	private View loadingView;
 
@@ -157,6 +159,7 @@ public class UserManageDialog extends Dialog
 		signUpCancelButton = (ButtonFlat) signUpView.findViewById(R.id.user_manage_signup_cancel);
 		signUpUserId = (EditText) signUpView.findViewById(R.id.user_manage_signup_userid);
 		signUpUserPwd = (EditText) signUpView.findViewById(R.id.user_manage_signup_pwd);
+		signUpUserEmail = (EditText) signUpView.findViewById(R.id.user_manage_signup_email);
 
 		initSignUpViewButton();
 	}
@@ -188,6 +191,7 @@ public class UserManageDialog extends Dialog
 					return;
 				}
 
+				// 滑动到加载界面
 				mViewPager.setCurrentItem(PAGE_LOAD, true);
 
 				User user = new User();
@@ -259,6 +263,7 @@ public class UserManageDialog extends Dialog
 			{
 				final String userId = signUpUserId.getText().toString();
 				final String userPwd = signUpUserPwd.getText().toString();
+				final String userEmail = signUpUserEmail.getText().toString();
 
 				if (StringTools.isEmpty(userId))
 				{
@@ -272,11 +277,24 @@ public class UserManageDialog extends Dialog
 					return;
 				}
 
-				mViewPager.setCurrentItem(PAGE_LOAD, true);
-
 				User user = new User();
 				user.setUsername(userId);
 				user.setPassword(userPwd);
+
+				if (!StringTools.isEmpty(userEmail))
+				{
+					if (!StringTools.isEmail(userEmail))
+					{
+						Toast.makeText(mContext, "wrong email address", Toast.LENGTH_SHORT).show();
+						return;
+					}
+					else
+					{
+						user.setEmail(userEmail);
+					}
+				}
+
+				mViewPager.setCurrentItem(PAGE_LOAD, true);
 
 				user.signUp(mContext, new SaveListener()
 				{

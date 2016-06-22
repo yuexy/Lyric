@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by weimeng on 2016/6/21.
+ * 告诉列表如何显示以及显示什么内容
  */
 public class LyricListAdapter extends RecyclerView.Adapter<LyricListAdapter.LyricListHolder>
 {
@@ -67,7 +68,7 @@ public class LyricListAdapter extends RecyclerView.Adapter<LyricListAdapter.Lyri
 	}
 
 	public class LyricListHolder extends RecyclerView.ViewHolder
-	{
+	{	//自定义的视图类
 		public LyricImageView lyricImageView;
 
 		public LyricListHolder(View itemView)
