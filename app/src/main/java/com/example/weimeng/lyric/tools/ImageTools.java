@@ -2,6 +2,7 @@ package com.example.weimeng.lyric.tools;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.CursorLoader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -91,8 +92,8 @@ public class ImageTools
 		newOpts.inJustDecodeBounds = false;
 		int w = newOpts.outWidth;
 		int h = newOpts.outHeight;
-		float hh = 600f;//
-		float ww = 380f;//
+		float hh = 350f;//
+		float ww = 250f;//
 		int be = 1;
 		if (w > h && w > ww)
 		{
@@ -141,5 +142,36 @@ public class ImageTools
 		}
 		cursor.close();
 		return filePath;
+	}
+
+	@SuppressLint("NewApi")
+	public static String getRealPathFromURI_API11to18(Context context, Uri contentUri)
+	{
+		String[] proj = {MediaStore.Images.Media.DATA};
+		String result = null;
+
+		CursorLoader cursorLoader = new CursorLoader(
+				context,
+				contentUri, proj, null, null, null);
+		Cursor cursor = cursorLoader.loadInBackground();
+
+		if (cursor != null)
+		{
+			int column_index =
+					cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+			cursor.moveToFirst();
+			result = cursor.getString(column_index);
+		}
+		return result;
+	}
+
+	public static String getRealPathFromURI_BelowAPI11(Context context, Uri contentUri)
+	{
+		String[] proj = {MediaStore.Images.Media.DATA};
+		Cursor cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
+		int column_index
+				= cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		cursor.moveToFirst();
+		return cursor.getString(column_index);
 	}
 }

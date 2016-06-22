@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -215,10 +216,23 @@ public class AddActivity extends AppCompatActivity
 		{
 			Uri uri = data.getData();
 
+			String realPath;
+
+			if (Build.VERSION.SDK_INT < 11)
+				realPath = ImageTools.getRealPathFromURI_BelowAPI11(this, data.getData());
+
+				// SDK >= 11 && SDK < 19
+			else if (Build.VERSION.SDK_INT < 19)
+				realPath = ImageTools.getRealPathFromURI_API11to18(this, data.getData());
+
+				// SDK > 19 (Android 4.4)
+			else
+				realPath = ImageTools.getRealPathFromURI_API19(this, data.getData());
+
 			System.out.println("the path is: " + ImageTools.getRealPathFromURI_API19(AddActivity.this, uri));
 
-//			System.out.println(ImageTools.getRealPathFromURI(AddActivity.this, uri));
-			bitmap = ImageTools.compressImageFromFile(ImageTools.getRealPathFromURI_API19(AddActivity.this, uri));
+			System.out.println(realPath);
+			bitmap = ImageTools.compressImageFromFile(realPath);
 			drawable = new BitmapDrawable(bitmap);
 			previewImage.setImageDrawable(drawable, 400);
 		}
